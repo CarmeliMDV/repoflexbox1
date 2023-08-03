@@ -1,0 +1,271 @@
+/* esto lo copiamos de aqui: https://css-tricks.com/box-sizing/, es para que incluya padding y bordes 
+en el computo total del tamaño de la cajita */
+
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/**************************************************************************************************/
+/* el font-family lo copiamos debajo de link de la fuente en https://fonts.google.com/specimen/Raleway?query=rale  */
+body {
+    font-family: 'Raleway', sans-serif;
+}
+/* C L A S E S   U T I L I T A R I A S *****************/
+/* el container se queda arriba porque es una clase utilitaria, que la vamos a usar mas de una vez */
+.container {
+    width: 80% ;
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5em;
+    margin: 0 0.1em;
+    border-radius: 0.5em;
+}
+
+.btn-primary {
+    color: #0F2620;
+    background-color: #214037;
+}
+
+.btn-secondary {
+    color: #7BA69A;
+    background-color: #77A699;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #A6464E;
+}
+
+.btn-light {
+    color: #DDF2CE;
+    background-color: #E2F2C9;
+}
+
+.btn-dark {
+    color: white;
+    background-color: #2F2E2E;
+}
+
+.bg-header  {
+    background-image: url("../assets/images/bg-header-min.jpg");
+    height: 18.75em;
+        /* configuramos con los tres siguientes lineas como se ve el la imagen   */
+    background-repeat: no-repeat;
+    background-position: center;
+        /* background-size: cover; agranda o disminuye la imagen para que se adapte el contenedor donde lo pongas */
+    background-size: cover;
+
+}
+
+.bg-navbar {
+    background-color: rgba(0, 0, 0, 0.157);
+    padding: 1.5em 0;
+}
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1em;
+    font-weight: 500;
+}
+
+@media (min-width: 768px){
+   .navbar-brand{
+       flex-direction: row;
+       margin-bottom: 0;
+   }
+}
+
+
+.navbar-brand img {
+    width: 2em;
+}
+
+.navbar-nav {
+    background-color: rgba(0, 0, 0, 0.750);
+    padding: 1em;
+    border-radius: 0.3em;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 0.3em;
+    color: white;
+    text-decoration: white;
+    font-size: 1rem;
+}
+
+/* el hover cambia los estilos del nav-lin (Inicio etc ) cuando pasamos el mouse por encima */
+
+.nav-link:hover {
+    background-color: white;
+    color: black;
+    border-radius: 0.5em;
+}
+
+/** MAIN    **/
+
+.main {
+    background-color: white;
+    margin-top: -2em;
+    border-radius: 0.3em;
+    padding: 0.3em;
+    
+}
+
+.main-title{
+    
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*TIENDA ***/
+
+@media ( min-width: 768px) {
+    .tienda {
+        display: flex;
+        gap: 1em;
+    }
+}
+/**CARD ****/
+
+.card {
+    background-color: #A6464E;
+    color: white;
+    overflow: hidden;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+ /*   margin-left: 1em;
+    margin-right: 1em; */
+    
+}
+
+.card-img {
+    width: 100%;
+}
+
+.card-body {
+    padding: 1em;
+}
+
+.card-body h5 {
+    font-size: 1.5rem;
+    margin: 1em 0;
+    font-weight: 500;
+}
+
+.card-body p {
+    font-weight: 300;
+}
+
+/**** nosotros  **** */
+
+.nosotros{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+    background-color:#2F2E2E ;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.nosotros-col-img  {
+    background-image: url("../assets/images/nosotros-min.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 21.87em;
+    width: 100%;
+    order: 2;
+}
+
+
+.nosotros-col-text {
+    order: 1;
+}
+
+@media (min-width: 576px){
+        .nosotros-col-img {
+            height: 31.25em; /* 31.25em porque queremos que a partir de 500px (500 /16=31.25em)
+                              aumente la altura de la imagen */
+        } 
+}
+
+@media (min-width: 768px){
+        .nosotros{
+            flex-direction: row;
+        }
+
+        .nosotros-col-img {
+            order: 1;
+            flex: 1 1 0;
+            margin-left: auto;
+        }
+
+        .nosotros-col-text {
+            order: 2;
+            flex: 1 1 0;
+            margin-right: auto ;
+        }
+}
+
+.nosotros-body {
+    padding: 1em;
+    text-align: center;
+    color: white;
+    
+    
+}
+
+.nosotros-body h2 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.nosotros-body p{
+    font-weight: 200;
+}
+
+.bg-footer {
+    background-color: #302C2D;
+    color: white;
+}
+
+.bg-footer p {
+    margin: 0;
+    padding: 1em 0;
+    text-align: center;
+    
+}
+@media (min-width: 768px){
+    .navbar{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}    
+
+
